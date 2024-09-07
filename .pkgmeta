@@ -1,0 +1,8 @@
+package-as: FishingDerbyTracker
+
+move-folders:
+ FishingDerbyTracker/Source: FishingDerbyTracker
+
+ignore:
+ - LICENCE.md
+ - README.md
