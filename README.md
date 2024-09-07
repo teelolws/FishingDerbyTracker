@@ -10,4 +10,4 @@ Automatic Activation/Deactivation: The addon activates only while you have the "
     
 Achievement Tracker: Special Tracker to help you achieve the Derby Dash achievement, rewarding Kah, Legend of the Deep.
     
-Conditional Display: Only visible if your character has learned War Within Fishing.
+~~Conditional Display: Only visible if your character has learned War Within Fishing.~~
