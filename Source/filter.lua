@@ -26,22 +26,24 @@ function addon:UpdateFilters()
     local settings = addon.db.global
 
     for zoneIndex, zoneData in ipairs(addon.zones) do
-        local zoneID = zoneData[1]
-        local headerAdded
-        for i = 2, #zoneData do
-            local item = zoneData[i]
-            local name, questID, info = item.name, item.quests[1], item.info
-            local completed = C_QuestLog.IsQuestFlaggedCompleted(questID)
-            if settings.showCompleted or (not completed) then
-                if not headerAdded then
-                    headerAdded = true
-                    text = text..formatHeader(C_Map.GetMapInfo(zoneID).name).."\n"
+        if not addon.db.global.hideZone[zoneIndex] then
+            local zoneID = zoneData[1]
+            local headerAdded
+            for i = 2, #zoneData do
+                local item = zoneData[i]
+                local name, questID, info = item.name, item.quests[1], item.info
+                local completed = C_QuestLog.IsQuestFlaggedCompleted(questID)
+                if settings.showCompleted or (not completed) then
+                    if not headerAdded then
+                        headerAdded = true
+                        text = text..formatHeader(C_Map.GetMapInfo(zoneID).name).."\n"
+                    end
+                    text = text..formatName(name, completed)
+                    if settings.showEventInfo and info then
+                        text = text..formatInfo(info)
+                    end
+                    text = text.."\n"
                 end
-                text = text..formatName(name, completed)
-                if settings.showEventInfo and info then
-                    text = text..formatInfo(info)
-                end
-                text = text.."\n"
             end
         end
     end
