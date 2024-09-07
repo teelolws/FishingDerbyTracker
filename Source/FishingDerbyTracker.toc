@@ -2,7 +2,7 @@
 ## Title: Fishing Derby Tracker
 ## Notes: Helps with maximazing your gains of Mereldar Derby Mark during Saturday's fishing derby
 ## Author: Teelo, Goldenshacal
-## X-Curse-Project-ID: 
+## X-Curse-Project-ID: 1098378
 ## IconTexture: 5746561
 ## Version: @project-version@
 ## SavedVariables: FishingDerbyTrackerDB
