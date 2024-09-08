@@ -35,7 +35,7 @@ addon.zones[3] = { -- hallowfall
     {name = "Crystalline Sturgeion", quests = {82919}, info = "Glimmerpool" },
     {name = "Goldengill Trout", quests = {82923}, info = "Glimmerpool " },
     {name = "Kaheti Slum Shark", quests = {82930}, info = "Blood In Water" },
-    {name = "Regal Dottyback", quests = {829294}, info = "Calm Surfacing Ripple"},
+    {name = "Regal Dottyback", quests = {82929}, info = "Calm Surfacing Ripple"},
     {name = "Roaring Anglerseeker", quests = {82927}, info = "Anglerseeker Torrent" },
     {name = "Sanguine Dogfish", quests = {82932}, info = "Blood In Water" },
     {name = "Spike Sea Raven", quests = {82933}, info = "Calm Surfacing Ripple" },
