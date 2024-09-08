@@ -1,21 +1,5 @@
 local addonName, addon = ...
 
--- Set the base time for Saturday 00:00 UTC
-local timeBase = 1725645600 -- Sat Sep 7 2024 00:00:00 UTC
-
--- Check the region and adjust the timeBase accordingly
-local region = GetCurrentRegion()
-if region == 3 then
-    -- US region (+7 hours UTC)
-    timeBase = timeBase + 7 * 3600
-elseif region == 2 then
-    -- KR or TW region (-8 hours UTC)
-    timeBase = timeBase - 8 * 3600
-end
-
-
-
-
 local function formatName(text, completed)
     if completed then
         return "|cFF00FF00"..text.."|r"
