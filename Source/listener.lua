@@ -18,9 +18,12 @@ local questIDs = {
     [83532] = true,
 }
 
+-- https://www.wowhead.com/spell=456024/derby-dasher
+local spellID = 456024
+
 local function isOnQuest()
     for questID in pairs(questIDs) do
-        if C_QuestLog.IsOnQuest(questID) then
+        if C_QuestLog.IsOnQuest(questID) or C_UnitAuras.GetPlayerAuraBySpellID(spellID) then
             return true
         end
     end
