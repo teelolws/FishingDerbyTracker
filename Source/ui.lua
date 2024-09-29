@@ -22,10 +22,3 @@ end
 function addon:HideUI()
     frame:Hide()
 end
-
---[[WhereTheZaralekUI:HookScript("OnShow", function()
-    local mapID = C_Map.GetBestMapForUnit("player")
-    if mapID ~= 2133 then
-        WhereTheZaralekUI:Hide()
-    end
-end)]]

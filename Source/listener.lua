@@ -23,9 +23,25 @@ local spellID = 456024
 
 local function isOnQuest()
     for questID in pairs(questIDs) do
-        if C_QuestLog.IsOnQuest(questID) or C_UnitAuras.GetPlayerAuraBySpellID(spellID) then
+        if C_QuestLog.IsOnQuest(questID) then
             return true
         end
+    end
+    return false
+end
+
+local function hasBuff()
+    return C_UnitAuras.GetPlayerAuraBySpellID(spellID) ~= nil
+end
+
+function addon.shouldShowUI()
+    local setting = addon.db.global.showType
+    if setting == 1 then
+        return isOnQuest()
+    elseif setting == 2 then
+        return hasBuff()
+    else
+        return true
     end
     return false
 end
@@ -40,7 +56,6 @@ listener:SetScript("OnEvent", function(self, event, ...)
     if (event == "PLAYER_ENTERING_WORLD") or (event == "ZONE_CHANGED_NEW_AREA") or (event == "QUEST_ACCEPTED") or (event == "QUEST_LOG_UPDATE") then
         local mapID = C_Map.GetBestMapForUnit("player")
         if not validZones[mapID] then addon:HideUI() return end
-        if not isOnQuest() then addon:HideUI() return end
         addon:UpdateFilters()
     elseif event == "ADDON_LOADED" then
         local text = ...

@@ -17,6 +17,7 @@ local function formatInfo(text)
 end
 
 function addon:UpdateFilters()
+    if not addon.shouldShowUI() then addon:HideUI() return end
     local text = "" 
     local settings = addon.db.global
 

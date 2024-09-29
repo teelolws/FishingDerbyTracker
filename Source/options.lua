@@ -9,6 +9,7 @@ EventUtil.ContinueOnAddOnLoaded(addonName, function()
             hideZone = {
                 ['*'] = false,
             },
+            showType = 1,
         },
         profile = {
             eme = {},
@@ -61,6 +62,18 @@ EventUtil.ContinueOnAddOnLoaded(addonName, function()
                 name = "Hide Zone (Any)",
                 set = function(info, v) addon.db.global.hideZone[5] = v addon:UpdateFilters() end,
                 get = function() return addon.db.global.hideZone[5] end,
+            },
+            showType = {
+                type = "select",
+                name = "Show when:",
+                values = {
+                    [1] = "Quest Active",
+                    [2] = "Buff Active",
+                    [3] = "Always",
+                },
+                set = function(info, v) addon.db.global.showType = v addon:UpdateFilters() end,
+                get = function() return addon.db.global.showType end,
+                style = "radio",
             },
         },
     }
