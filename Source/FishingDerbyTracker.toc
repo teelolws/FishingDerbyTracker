@@ -1,4 +1,4 @@
-## Interface: 110002
+## Interface: 110200
 ## Title: Fishing Derby Tracker
 ## Notes: Helps with maximazing your gains of Mereldar Derby Mark during Saturday's fishing derby
 ## Author: Teelo, Goldenshacal
