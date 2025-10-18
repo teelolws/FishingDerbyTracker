@@ -62,7 +62,17 @@ listener:SetScript("OnEvent", function(self, event, ...)
         if text == addonName then
             listener:UnregisterEvent("ADDON_LOADED")
             libEME:RegisterFrame(FishingDerbyTrackerUI, "Fishing Derby", addon.db.profile.eme)
-            libEME:RegisterResizable(FishingDerbyTrackerUI)
+            libEME:RegisterSlider(FishingDerbyTrackerUI, "Width", "Width",
+                function(newValue)
+                    FishingDerbyTrackerUI:SetWidth(newValue)
+                end,
+                100, 600, 1)
+            libEME:RegisterSlider(FishingDerbyTrackerUI, "Height", "Height",
+                function(newValue)
+                    FishingDerbyTrackerUI:SetHeight(newValue)
+                end,
+                100, 1000, 1)
+            libEME:RegisterResizable(FishingDerbyTrackerUI, 25, 300, 1)
             libEME:HideByDefault(FishingDerbyTrackerUI)
             libEME:RegisterHideable(FishingDerbyTrackerUI)
             libEME:RegisterToggleInCombat(FishingDerbyTrackerUI)
