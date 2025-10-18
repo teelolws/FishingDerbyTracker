@@ -10,7 +10,7 @@ frame:SetPoint("LEFT", nil, "LEFT")
 
 frame.eventText = frame:CreateFontString(nil, "OVERLAY", "GameTooltipTextSmall")
 frame.eventText:SetPoint("TOPLEFT", frame, "TOPLEFT")
-frame.eventText:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, -100)
+frame.eventText:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 0)
 frame.eventText:SetJustifyV("TOP")
 
 function addon:UpdateEventUI(text)
