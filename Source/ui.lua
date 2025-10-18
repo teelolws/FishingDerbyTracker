@@ -5,7 +5,7 @@ local libEME = LibStub:GetLibrary("EditModeExpanded-1.0")
 addon.ui = CreateFrame("Frame", "FishingDerbyTrackerUI")
 local frame = addon.ui
 
-frame:SetSize(200,300)
+frame:SetSize(550,475)
 frame:SetPoint("LEFT", nil, "LEFT")
 
 frame.eventText = frame:CreateFontString(nil, "OVERLAY", "GameTooltipTextSmall")
